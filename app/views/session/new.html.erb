@@ -1,0 +1,35 @@
+<!-- Header -->
+  <header id="header">
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">About</a></li>
+        <li><%= link_to 'Login', profile_path %></li>
+        <li><a href="#" class="button special">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<div class="chronometer" tabindex="1" onmouseup="mouseClick(event)" onkeydown="keyboardPress(event)">
+  <h1 class="text fade-in"> Take a break! </h1>
+  <br><br><br><br><br>
+
+  <!-- this div may be making responsive difficult and overlap the footer-->
+  <div id="clock" class="text clock">
+    <span class="text minutes"></span>
+    <span class="text">:</span>
+    <span class="text seconds"></span>
+  </div>
+  <br><br><br><br><br><br><br><br>
+
+  <p id="alert" class="text alert fade-in-out"></p>
+  <p id="secondAlert" class="text second-alert fade-in fade-out"></p>
+
+</div>
+<!-- Footer -->
+  <footer id="footer">
+    <ul class="copyright">
+      <li>Made with love by <a href="http://github.com/luizcieslak">Luiz Cieslak</a>.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+  </footer>
