@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  get 'profile/index'
+  root           'session#new'
 
-  get 'profile/login'
+  get 'login'   => 'profile#login'
+  get 'signup'  => 'profile#new'
+  get 'profile' => 'profile#show'
+  get 'profile/update'  => 'profile#update'
+  get 'profile/delete'  => 'profile#delete'
 
-  get 'profile/signup'
+  get 'session' => 'session#new'
+  get 'success' => 'session#success'
 
-  get 'session/new'
-
-  root 'session#new'
-
-  get 'session/success'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

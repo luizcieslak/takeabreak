@@ -1,10 +1,18 @@
 class ProfileController < ApplicationController
-  def index
-  end
 
   def login
   end
 
-  def signup
+  def new
   end
+
+  def show
+  end
+
+  def update
+  end
+
+  def delete
+  end
+
 end
