@@ -2,14 +2,20 @@ Rails.application.routes.draw do
 
   root           'session#new'
 
-  get 'login'   => 'profile#login' #when looking for this route, use login_path
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
+
   get 'signup'  => 'profile#new'
   get 'profile' => 'profile#show'
   get 'profile/update'  => 'profile#update'
   get 'profile/delete'  => 'profile#delete'
 
-  get 'session' => 'session#new'
-  get 'success' => 'session#success'
+  get 'break' => 'breaks#new'
+  get 'success' => 'breaks#success'
+
+
 
   resources :users
 
