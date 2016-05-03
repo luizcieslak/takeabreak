@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root           'session#new'
 
-  get 'login'   => 'profile#login'
+  get 'login'   => 'profile#login' #when looking for this route, use login_path
   get 'signup'  => 'profile#new'
   get 'profile' => 'profile#show'
   get 'profile/update'  => 'profile#update'

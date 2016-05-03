@@ -7,6 +7,6 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_template 'session/new'
     assert_select "a[href=?]", root_path, count: 2
     assert_select "a[href=?]", signup_path
-    assert_select "a[href=?]", profile_login_path
+    assert_select "a[href=?]", login_path
   end
 end
