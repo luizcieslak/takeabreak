@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root           'session#new'
 
   get 'login'   => 'profile#login' #when looking for this route, use login_path
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
 
   get 'session' => 'session#new'
   get 'success' => 'session#success'
+
+  resources :users
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
