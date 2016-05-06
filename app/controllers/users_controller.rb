@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Welcome to takeabreak!" #Temporary message that will be displayed in /users/:id page
       redirect_to @user
     else
