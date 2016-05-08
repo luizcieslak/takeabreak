@@ -11,4 +11,22 @@
                                   data: { confirm: "You sure?" },
                                   class: "btn btn-danger"  %>
   </aside>
+  <div class="col-md-8">
+    <% if @user.breaks.any? %>
+      <h3>Total Breaks: <%= @user.breaks.count %></h3>
+      <ol class="breaks">
+        <% @breaks.each do |b| %>
+          <li id="break-<%= b.id %>">
+            <%= image_tag "meditation.png", class: "sprite" %>
+            <span class="title">Break n.<%= b.id %></span>
+            <span class="points"><%= b.points %> points</span>
+            <span class="timestamp">
+              Done in <%= time_ago_in_words(b.created_at) %> ago.
+            </span>
+          </li>
+        <% end %>
+      </ol>
+      <%= will_paginate @breaks %>
+    <% end %>
+  </div>
 </div>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'signup'  => 'users#new'
 
   get 'break' => 'breaks#new'
+  post 'break' => 'breaks#create'
   get 'success' => 'breaks#success'
 
 

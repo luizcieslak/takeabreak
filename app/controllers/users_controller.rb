@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   #reminder: use debugger of byebug to debug the application.
 
-  before_action :logged_in_user, only:[:edit,:update,:destroy]
+  before_action :logged_in_user, only:[:edit,:update,:destroy,:show]
 
   def new
     @user = User.new
@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @breaks = @user.breaks.paginate(page: params[:page])
   end
 
   def create
