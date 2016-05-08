@@ -22,5 +22,19 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to login_url
   end
 
+  test "should redirect destroy when not logged in" do
+    assert_no_difference 'User.count' do
+      delete :destroy, id: @user
+    end
+    assert_redirected_to login_url
+  end
+
+  test "should delete user" do
+    log_in_as(@user)
+    assert_difference 'User.count',-1 do
+      delete :destroy, id: @user
+    end
+    assert_redirected_to break_path
+  end
 
 end

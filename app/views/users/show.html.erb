@@ -6,5 +6,9 @@
         <%= @user.name %>
       </h1>
     </section>
+    <%= link_to "Edit Information", edit_user_path(current_user), class: "btn btn-primary" %>
+    <%= link_to "Delete Profile", user_path, method: :delete,
+                                  data: { confirm: "You sure?" },
+                                  class: "btn btn-danger"  %>
   </aside>
 </div>

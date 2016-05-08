@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   #reminder: use debugger of byebug to debug the application.
 
-  before_action :logged_in_user, only:[:edit,:update]
+  before_action :logged_in_user, only:[:edit,:update,:destroy]
 
   def new
     @user = User.new
@@ -37,6 +37,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "Your profile was deleted."
+    redirect_to break_path
   end
 
   private

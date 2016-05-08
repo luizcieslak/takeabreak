@@ -6,11 +6,7 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-
-  get 'signup'  => 'profile#new'
-  get 'profile' => 'profile#show'
-  get 'profile/update'  => 'profile#update'
-  get 'profile/delete'  => 'profile#delete'
+  get 'signup'  => 'users#new'
 
   get 'break' => 'breaks#new'
   get 'success' => 'breaks#success'
