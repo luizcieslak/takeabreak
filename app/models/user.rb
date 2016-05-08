@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
                     uniqueness: {case_sensitive:false}
 
   has_secure_password
-  validates :password, length: { minimum: 8 }
+  validates :password, length: { minimum: 8 }, allow_nil: true
 
   # Returns the hash digest of the given string.
  def User.digest(string)
@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
                                                  BCrypt::Engine.cost
    BCrypt::Password.create(string, cost: cost)
  end
- 
+
  # Returns a random token.
   def User.new_token
     SecureRandom.urlsafe_base64
