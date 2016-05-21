@@ -47,7 +47,8 @@ function initializeClock(id, endtime){
     clock.innerHTML = minutes + ":" + seconds;
     if(t.total<=0){
       clearInterval(timeinterval);
-      //go to Success page
+      console.log(Routes.break_path())
+      $.post(Routes.break_path(), t);
     }
   }
 
