@@ -1,26 +1,3 @@
-// Place all the styles related to the Session controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-//
-// div.chronometer{
-//
-//   //position:fixed;
-//   padding:0;
-//   margin:0;
-//
-//
-//   top:0;
-//   left:0;
-//
-//   width: 100%;
-//   height: 100%;
-// //  background:rgba(255,255,255,0.5);
-//
-//   animation: pulse 10s infinite;
-// }
-
 @keyframes pulse {
   0% {
     background-color: #001F3F;
@@ -44,6 +21,21 @@
   }
   50%{
     opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@keyframes fadeInOutLong{
+  0% {
+    opacity:0;
+  }
+  25%{
+    opacity:1;
+  }
+  50%{
+    opacity: 0.5;
   }
   100% {
     opacity:0;
@@ -80,24 +72,17 @@
   animation-duration:4s;
 }
 
+.fade-in-out-long{
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeInOutLong ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeInOutLong ease-in 1;
+  animation:fadeInOutLong ease-in 1;
 
-.text{
-  color: #FFFFFF;
-  font-size: 300%;
-  font-family: "Raleway";
-  text-align: center;
-}
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
 
-.text.clock{
-  position: relative;
-  transform: translateY(-50%);
-  font-size: 800%;
-}
-
-.text.alert{
-  font-size: 250%;
-}
-
-.text.second-alert{
-  font-size: 200%;
+  -webkit-animation-duration:16s;
+  -moz-animation-duration:16s;
+  animation-duration:16s;
 }

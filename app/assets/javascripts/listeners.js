@@ -5,7 +5,14 @@ function resetTimer(){
 }
 
 function advice(){
-  return "Organize your thoughts for a while and take deep breaths."
+  var phrases = [
+    "\"Take rest; a field that has rested gives a bountiful crop.\" <br>- Publius Ovidius Naso",
+    "\"For fast-acting relief, try slowing down.\" <br>- Lily Tomlin",
+    "\"Sometimes the most productive thing you can do is relax.\"<br>- Mark Black",
+    "Organize your thoughts for a while.",
+    "Take deep breaths."
+  ]
+  return phrases[Math.floor(Math.random() * phrases.length)]
 }
 
 function mouseClick(e){
