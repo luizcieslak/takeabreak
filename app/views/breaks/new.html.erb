@@ -1,13 +1,19 @@
-<h1>new session</h1>
+<div class="row break" tabindex="1" onmouseup="mouseClick(event)" onkeydown="keyboardPress(event)">
+  <h1 id="clock"></h1>
+  <h1 id="alert" class="fade-in-out"></h1>
+  <h3 id="alert2" class="center fade-in"></h3>
+  <p class="center fade-in">Login to earn points!</p>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:break,url: break_path) do |f| %>
+  <!-- <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(:break,url: break_path) do |f| %>
 
-      <%= f.label :points %>
-      <%= f.text_field :points, class: 'form-control' %>
+        <%= f.label :points %>
+        <%= f.text_field :points, class: 'form-control' %>
 
-      <%= f.submit "Go", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+        <%= f.submit "Go", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div> -->
+
 </div>

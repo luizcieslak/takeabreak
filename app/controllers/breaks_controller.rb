@@ -1,6 +1,7 @@
 class BreaksController < ApplicationController
   def new
     @break = Break.new
+    
   end
 
   def success
