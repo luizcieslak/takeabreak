@@ -1,8 +1,5 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import Navbar from '../Navbar'
-
-//import {Typography} from '@material-ui/core'
 
 const Container = styled.div`
   text-align: center;
@@ -41,12 +38,8 @@ const StyledA = styled.a`
 export default function Home() {
   return (
     <Container>
-      {/*<Navbar /> */}
-      <Header className='App-header'>
-        <Logo src='assets/gf-react2.png' alt='logo' />
-        {/*<Typography variant="title" color="inherit">
-                    Intensivão React Grupo Fleury
-            </Typography> */}
+      <Header>
+        <Logo src='../logo.svg' alt='logo' />
         <h1>Take a break</h1>
       </Header>
     </Container>
