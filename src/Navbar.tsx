@@ -6,9 +6,9 @@ import Typography from '@material-ui/core/Typography'
 const NavBar = () => {
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position='static'>
         <Toolbar>
-          <Typography variant="title" color="inherit">
+          <Typography variant='title' color='inherit'>
             React & Material-UI Sample Application
           </Typography>
         </Toolbar>
@@ -17,4 +17,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar;
+export default NavBar
