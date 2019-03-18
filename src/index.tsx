@@ -2,15 +2,19 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import Home from './components/Home'
-import * as serviceWorker from './serviceWorker'
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
+import { Provider } from 'reakit'
+import defaultTheme from 'reakit-theme-default'
+
 const App = () => {
   return (
-    <Router>
-      <Route exact path='/' component={Home} />
-    </Router>
+    <Provider theme={defaultTheme}>
+      <Router>
+        <Route exact path='/' component={Home} />
+      </Router>
+    </Provider>
   )
 }
 

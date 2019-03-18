@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import { keyframes } from 'styled-components'
+import { styled, Box, Heading } from 'reakit'
 
 const spin = keyframes`
   from {
@@ -58,37 +59,19 @@ const fadeInOutLong = keyframes`
   }
 `
 
-const Logo = styled.img`
-  animation: ${spin} infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-`
-
-const StyledA = styled.a`
-  color: #61dafb;
-`
-
-const Container = styled.div`
-  text-align: center;
-  animation: ${pulse} infinite 10s;
-` 
-
-const Header = styled.header`
-  min-height: 100vh;
+const Container = styled(Box)`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  animation: ${pulse} infinite 10s;
+  height: 100vh;
 `
 
 export default function Home() {
   return (
     <Container>
-      <Header>
-        <Logo src='./logo.svg' alt='logo' />
-        <h1>Take a break</h1>
-      </Header>
+      <Heading color='white'>Take a break</Heading>
     </Container>
   )
 }
