@@ -1,0 +1,77 @@
+<% provide(:title, current_user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+        <br>
+        <%= @user.email %>
+        <br><br>
+      </h1>
+      <h1 data-toggle="modal" data-target="#ranks">
+        <%= case @breaks.count
+        when 0..5
+          "Rookie breaker"
+        when 5..25
+          "Pupil Breaker"
+        when 25..100
+           "Master Breaker"
+        when 100...500
+            "Transcendent Breaker"
+        when nil
+            "nil"
+        else
+            "Reaching the nirvana"
+        end %>
+      </h1>
+    </section>
+    <%= link_to "Edit Information", edit_user_path(current_user), class: "btn btn-primary" %>
+    <%= link_to "Delete Profile", user_path, method: :delete,
+                                  data: { confirm: "You sure?" },
+                                  class: "btn btn-danger"  %>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.breaks.any? %>
+      <h3>Total Breaks: <%= @user.breaks.count %></h3>
+      <ol class="breaks">
+        <% @breaks.each do |b| %>
+          <li id="break-<%= b.id %>">
+            <%= image_tag "meditation.png", class: "sprite" %>
+            <span class="title">Break n.<%= b.id %></span>
+            <span class="points"><%= b.points %> points</span>
+            <span class="timestamp">
+              Done in <%= time_ago_in_words(b.created_at) %> ago.
+            </span>
+          </li>
+        <% end %>
+      </ol>
+      <%= will_paginate @breaks %>
+    <% end %>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="ranks" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">takeabreak ranking system:</h4>
+      </div>
+      <div class="modal-body">
+        <p><b>0-5 breaks:</b> Rookie</p>
+        <p><b>5-25 breaks:</b> Pupil</p>
+        <p><b>25-100 breaks:</b> Master</p>
+        <p><b>100-500 breaks:</b> Transcendent</p>
+        <p><b>500+ breaks:</b> Reaching the nirvana</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
